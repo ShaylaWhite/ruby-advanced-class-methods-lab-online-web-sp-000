@@ -50,6 +50,8 @@ def self.new_from_filename(filename)
     answer.name=filename.split(/[^a-zA-Z\s]|\s-\s/)[1]
     answer
   end
+  
+  def self.crea
 def save
     self.class.all << self
   end
