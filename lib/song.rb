@@ -51,9 +51,18 @@ def self.new_from_filename(filename)
     answer
   end
   
-  def self.create_from_filename(filename)
-    song=self.new
+   def self.create_from_filename(filename)
+    answer=self.new
+    answer.artist_name=filename.split(/[^a-zA-Z\s]|\s-\s/)[0]
+    answer.name=filename.split(/[^a-zA-Z\s]|\s-\s/)[1]
+    answer.save
+    answer
   end
+
+  def self.destroy_all
+    self.all.clear
+  end
+end
 def save
     self.class.all << self
   end
