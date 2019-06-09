@@ -43,10 +43,12 @@ def self.find_or_create_by_name(name)
   def self.alphabetical
     self.all.sort_by{|song| song.name}
   end
-
-def self.new_from_filename(name)
-  song.all.chomp{|song| }
-end
+def 
+ answer=self.new
+    answer.artist_name=filename.split(/[^a-zA-Z\s]|\s-\s/)[0]
+    answer.name=filename.split(/[^a-zA-Z\s]|\s-\s/)[1]
+    answer
+  end
 def save
     self.class.all << self
   end
