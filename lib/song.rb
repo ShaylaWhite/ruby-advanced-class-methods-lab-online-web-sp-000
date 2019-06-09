@@ -51,7 +51,7 @@ def self.new_from_filename(filename)
     answer
   end
   
-  def self.create_from_filename
+  def self.create_from_filename(filename)
   end
 def save
     self.class.all << self
