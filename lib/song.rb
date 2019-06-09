@@ -44,14 +44,14 @@ def self.find_or_create_by_name(name)
     self.all.sort_by{|song| song.name}
   end
   
-def self.new_from_filename(filename)
- answer=self.new
+  def self.new_from_filename(filename)
+    answer=self.new
     answer.artist_name=filename.split(/[^a-zA-Z\s]|\s-\s/)[0]
     answer.name=filename.split(/[^a-zA-Z\s]|\s-\s/)[1]
     answer
   end
-  
-   def self.create_from_filename(filename)
+
+  def self.create_from_filename(filename)
     answer=self.new
     answer.artist_name=filename.split(/[^a-zA-Z\s]|\s-\s/)[0]
     answer.name=filename.split(/[^a-zA-Z\s]|\s-\s/)[1]
@@ -62,10 +62,5 @@ def self.new_from_filename(filename)
   def self.destroy_all
     self.all.clear
   end
-end
-def save
-    self.class.all << self
-  end
-
 end
 
